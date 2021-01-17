@@ -32,18 +32,6 @@ export default {
     }
     const uuid = General.paramUUID(this);
 
-    // PROD: Force confirm email only used for testing
-    if (uuid.localeCompare("force-confirm") === 0) {
-      if (
-        await HTTPReq.genGET(this.$router, "force_confirm_email/" + user.ID)
-      ) {
-        await General.genUpdateCurrentUser(this.$router);
-        this.$data.loading = false;
-        await General.genRedirectTo(this.$router, Routes.Landing);
-        return;
-      }
-    }
-
     const res = await HTTPReq.genPOST(
       this.$router,
       "confirm/email",

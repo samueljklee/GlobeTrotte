@@ -11,8 +11,7 @@ enum AxMethod {
 }
 
 export default class HTTPReq {
-  private static host = "localhost";
-  private static port = 4000;
+  private static host = "globetrotte.com";
   private static pathPrefix = "/api/";
   private static delPrefix = "del/";
 
@@ -41,7 +40,7 @@ export default class HTTPReq {
 
   public static getURI(path: string): string {
     return (
-      "http://" + HTTPReq.host + ":" + HTTPReq.port + HTTPReq.pathPrefix + path
+      "https://" + HTTPReq.host + HTTPReq.pathPrefix + path
     );
   }
 

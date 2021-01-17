@@ -130,11 +130,4 @@ var actualRoutes = routes{
 		"/confirm/email",
 		confirmEmail,
 	},
-	// PROD: Used for testing only. To remove on prod.
-	route{
-		"ForceConfirmEmail",
-		"GET",
-		"/force_confirm_email/{id}",
-		forceConfirmEmail,
-	},
 }
